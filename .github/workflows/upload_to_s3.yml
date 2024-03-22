@@ -13,6 +13,14 @@ jobs:
       - name: Current Directory
         run: ls -a
 
+      - name: Enable S3 Bucket Versioning
+        run: |
+          aws s3api put-bucket-versioning --bucket gf-unveil --versioning-configuration Status=Enabled
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
+
       - name: Create tar archive
         run: tar -czf "artifact_v${{ github.run_number }}.tar.gz" "/home/runner/work/data_transformation/data_transformation/"
 

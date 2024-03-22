@@ -2,7 +2,7 @@ name: Upload to S3 with Versioned Filename
 on:
   push:
     branches:
-      - feature/data_transformation
+      - master
 jobs:
   upload:
     runs-on: ubuntu-latest

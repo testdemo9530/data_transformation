@@ -1,0 +1,25 @@
+version: 2
+sources:
+  - name: stage_external_sources
+    database: AIRBYTE_DB
+    schema: ICEBERG
+    loader: S3
+    tables:
+      - name: landing_patient_external_table
+        ext_full_refresh: true
+        description: "External Test"
+        external:
+          location: "@LANDING_STAGE/airbyte_raw_landing_patient"  # reference an existing external stage 
+          file_format: "(TYPE = PARQUET)"
+        columns:
+          - name: _airbyte_ab_id
+            description: "Airbyte ID"
+            data_type: varchar
+          - name: _airbyte_emitted_at
+            description: "Aibyte Extraction Date"
+            data_type: timestamp_ntz
+          - name: _airbyte_data
+            description: "Airbyte Actual Data"
+            data_type: varchar
+
+      

@@ -10,6 +10,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Current Directory
+        run: pwd
+        run: ls -a
+
       - name: Create tar archive
         run: tar -czf "artifact_v${{ github.run_number }}.tar.gz" "/home/runner/work/data_transformation/data_transformation/"
 

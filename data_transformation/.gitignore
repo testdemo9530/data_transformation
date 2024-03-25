@@ -1,0 +1,11 @@
+
+target/
+dbt_packages/
+logs/
+
+*../.apis/
+
+profiles.yml
+
+.venv/
+.venv1/

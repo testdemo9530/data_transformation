@@ -1,0 +1,9 @@
+
+target/
+dbt_packages/
+logs/
+
+*../.apis/
+
+.venv/
+.venv1/

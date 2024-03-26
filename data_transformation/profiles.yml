@@ -1,16 +1,14 @@
 data_transformation:
   outputs:
     dev:
-      type: <snowflake>
-      account: hmb88115.us-east-1 (snowflake_account)
-      user: snowflake_username
-      password: snowflake_pw
-      role: snowflake_role
-      database: snowflake_database
-      warehouse: snowflake_warehouse
-      schema: snowflake_schema
+      type: snowflake
+      account: hmb88115.us-east-1
+      user: angel1gf
+      password: Gr!tf3@T
+      role: ACCOUNTADMIN
+      database: AIRBYTE_DB
+      warehouse: COMPUTE_WH
+      schema: ICEBERG
       threads: 4
       client_session_keep_alive: true
   target: dev
-
-

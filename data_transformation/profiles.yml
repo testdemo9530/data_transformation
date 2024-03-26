@@ -1,7 +1,7 @@
 data_transformation:
   outputs:
     dev:
-      type: snowflake
+      type: <snowflake>
       account: hmb88115.us-east-1 (snowflake_account)
       user: snowflake_username
       password: snowflake_pw

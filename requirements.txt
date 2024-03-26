@@ -1,1 +1,1 @@
-https://github.com/Unveil-Health/UH-DataTransformation.git@feature/customized-dbt-package#egg=dbt-snowflake
+git+https://github.com/AngelShresth1/dbt-iceberg-snowflake.git

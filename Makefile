@@ -6,7 +6,7 @@ REQUIREMENT_FILE=./requirements.txt
 VENV=venv
 PYTHON=python
 
-.PHONY: venv install install_dbt_packages seed run_tests run_models
+.PHONY: venv install install_dbt_packages load_yml seed run_tests run_models
 # Detect the operating system
 ifeq ($(OS),Windows_NT)
     VENV_ACTIVATE := $(VENV)\Scripts\activate
@@ -18,7 +18,7 @@ else
     ACTIVATE_CMD := .
 endif
 
-all: venv install install_dbt_packages seed run_tests run_models
+all: venv install install_dbt_packages load_yml seed run_tests run_models
 
 venv:
 	$(PYTHON_ENV) -m venv $(VENV)
@@ -28,6 +28,9 @@ install:
 
 install_dbt_packages:
 	$(ACTIVATE_CMD) $(VENV_ACTIVATE) && cd data_transformation && $(DBT) deps
+
+load_yml:
+	$(ACTIVATE_CMD) $(VENV_ACTIVATE) && cd data_transformation && $(PYTHON_ENV) load_yml.py
 
 run_tests:
 	$(ACTIVATE_CMD) $(VENV_ACTIVATE) && cd data_transformation && $(DBT) test --profile $(DBT_PROFILE) --target $(DBT_ENV)

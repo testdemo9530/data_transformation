@@ -15,7 +15,7 @@ WITH ctePatient AS (
         PARSE_JSON(_airbyte_data):name[0].use::STRING AS name_use,
         PARSE_JSON(_airbyte_data):resourceType::STRING AS name_resource_type,
         PARSE_JSON(_airbyte_data):identifier[1].period.start::STRING AS identifier_period_start,
-    FROM {{source("airbyte_raw_patient", "landing_patient_external_table")}},
+    FROM {{source("airbyte_raw_patient", "ICEBERG_LANDING_PATIENT")}},
          LATERAL FLATTEN(INPUT => PARSE_JSON(_airbyte_data):extension) i
 )
 SELECT

@@ -45,7 +45,7 @@ Source for the transformation is defined here.
  
 
 **Make for windows**
-  1. Install chocos first 
+  1. Install choco first 
 
   Run this command in powershell (requires admin access)
 
@@ -53,7 +53,7 @@ Source for the transformation is defined here.
 
   2. Install make
 
-  `chocos install make`
+  `choco install make`
 
 **Python (version 3.8.10 or above):**
 

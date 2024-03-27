@@ -1,0 +1,1 @@
+git+https://github.com/AngelShresth1/dbt-iceberg-snowflake.git

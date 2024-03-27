@@ -22,7 +22,7 @@ jobs:
           AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
 
       - name: Create tar archive
-        run: tar -czf "artifact_v${{ github.run_number }}.tar.gz" --ignore-failed-read "/home/runner/work/data_transformation/data_transformation/"
+        run: tar -czf "artifact_v${{ github.run_number }}.tar.gz" "/home/runner/work/data_transformation/data_transformation/"
 
       - name: Install AWS CLI
         uses: aws-actions/configure-aws-credentials@v1
